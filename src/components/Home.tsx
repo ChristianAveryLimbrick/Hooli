@@ -1,19 +1,23 @@
 import React from "react";
-
+import '../App.css'
 import HooliLogo from "../Hooli.png";
 import "flowbite";
+import { useState } from "react";
 
 ("use client");
 
 export default function Home() {
   return (
-    <div className="d-flex flex-column min-vh-100"> {/* Flex container that fills the viewport height */}
-      <div className="container flex-grow-1"> {/* Content container that grows to fill space */}
+    <div className="d-flex flex-column vh-100">
+      <Nav />
+      <div className="container flex-grow-1 ">
         <Logo />
         <Search />
         <Btn />
       </div>
-      <Footer />
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 }
@@ -54,8 +58,11 @@ const Search = () => {
 };
 
 const Btn = () => {
-  const buttonStyle = {
-    backgroundColor: "#D3D3D3", // Grey background
+  const [leftHovered, setLeftHovered] = React.useState(false);
+  const [rightHovered, setRightHovered] = React.useState(false);
+
+  const commonButtonStyle = {
+    backgroundColor: "#e9ecef", // Grey background
     color: "black", // Black text
     padding: "8px 16px", // Vertical and horizontal padding
     borderRadius: "12px", // Pill shape
@@ -66,10 +73,22 @@ const Btn = () => {
     marginTop: "25px",
   };
 
+  const leftButtonStyle = {
+    ...commonButtonStyle,
+    border: leftHovered ? "1px solid #a9a9a9" : "none",
+  };
+
+  const rightButtonStyle = {
+    ...commonButtonStyle,
+    border: rightHovered ? "1px solid #a9a9a9" : "none",
+  };
+
   return (
     <div>
       <button
-        style={buttonStyle}
+        style={leftButtonStyle}
+        onMouseEnter={() => setLeftHovered(true)}
+        onMouseLeave={() => setLeftHovered(false)}
         onClick={() => {
           console.log("Search clicked");
         }}
@@ -77,7 +96,9 @@ const Btn = () => {
         Search
       </button>
       <button
-        style={buttonStyle}
+        style={rightButtonStyle}
+        onMouseEnter={() => setRightHovered(true)}
+        onMouseLeave={() => setRightHovered(false)}
         onClick={() => {
           console.log("I'm feeling lucky clicked");
         }}
@@ -88,25 +109,25 @@ const Btn = () => {
   );
 };
 
+
+
+
 const Nav = () => {
   return (
-    <nav>
-      <div>
-        <ul>
-          <li>HooliMail</li>
-          <li>About</li>
-          <li>Contact</li>
-        </ul>
-      </div>
+    <nav className="d-flex justify-content-end m-4">
+      <ul className="list-unstyled d-flex">
+        <li className="me-3">HooliMail</li>
+        <li>Images</li>
+      </ul>
     </nav>
   );
 };
 
 const Footer = () => {
   return (
-    <footer className="bg-secondary text-white py-3 w-full mt-auto"> {/* mt-auto pushes the footer to the bottom */}
-      <div className="text-center">
-        <h6>Donate to fight climate change</h6>
+    <footer className="bg-light text-center text-lg-start">
+      <div className="text-center p-3" style={{ backgroundColor: "#e9ecef" }}>
+        © 2021 Hooli, Inc.
       </div>
     </footer>
   );

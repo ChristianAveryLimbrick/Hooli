@@ -6,6 +6,7 @@
 * {
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto Flex', sans-serif;
 }
 
 .container {
@@ -16,3 +17,22 @@
     height: 100vh;
     padding-top: 28vh; /* Adjust this value to position the content higher */
 }
+
+
+
+.btn-hover {
+    background-color: #e9ecef; /* Grey background */
+    color: black; /* Black text */
+    padding: 8px 16px; /* Vertical and horizontal padding */
+    border-radius: 12px; /* Pill shape */
+    border: none; /* No border */
+    outline: none; /* No outline */
+    cursor: pointer; /* Cursor changes to pointer on hover */
+    margin: 5px; /* Margin around buttons */
+    margin-top: 25px;
+  }
+
+
+.btn-hover:hover {
+    border: 1px solid #a9a9a9; /* Darker gray border on hover */
+  }
