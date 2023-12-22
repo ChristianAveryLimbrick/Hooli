@@ -7,15 +7,13 @@ import "flowbite";
 
 export default function Home() {
   return (
-    <div>
-      <div className="container">
+    <div className="d-flex flex-column min-vh-100"> {/* Flex container that fills the viewport height */}
+      <div className="container flex-grow-1"> {/* Content container that grows to fill space */}
         <Logo />
         <Search />
         <Btn />
       </div>
-      <div>
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }
@@ -84,7 +82,7 @@ const Btn = () => {
           console.log("I'm feeling lucky clicked");
         }}
       >
-        I'm lucky
+        I'm feeling lucky
       </button>
     </div>
   );
@@ -106,13 +104,10 @@ const Nav = () => {
 
 const Footer = () => {
   return (
-      <footer className="bg-secondary text-white py-3">
-          <div className="container text-center">
-              <a href="#" className="text-white">
-                  Donate to fight climate change
-              </a>
-          </div>
-      </footer>
+    <footer className="bg-secondary text-white py-3 w-full mt-auto"> {/* mt-auto pushes the footer to the bottom */}
+      <div className="text-center">
+        <h6>Donate to fight climate change</h6>
+      </div>
+    </footer>
   );
 };
-
