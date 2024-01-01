@@ -8,7 +8,7 @@ import { useState } from "react";
 
 export default function Home() {
   return (
-    <div className="d-flex flex-column vh-100">
+    <div className="d-flex flex-column" >
       <Nav />
       <div className="container flex-grow-1 ">
         <Logo />
@@ -43,6 +43,15 @@ const searchStyles = {
 };
 
 const Search = () => {
+
+const [onHover, setOnHover] = useState(false)
+
+const searchHover = {
+  ...searchStyles,
+  border: onHover ? "1px solid #a9a9a9" : "none",
+}
+
+
   return (
     <div>
       <div>
@@ -114,9 +123,9 @@ const Btn = () => {
 
 const Nav = () => {
   return (
-    <nav className="d-flex justify-content-end m-4">
+    <nav className="d-flex justify-content-end m-2">
       <ul className="list-unstyled d-flex">
-        <li className="me-3">HooliMail</li>
+        <li className="me-2">HooliMail</li>
         <li>Images</li>
       </ul>
     </nav>

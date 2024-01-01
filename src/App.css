@@ -14,8 +14,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start; /* Aligns content to the top */
-    height: 100vh;
-    padding-top: 28vh; /* Adjust this value to position the content higher */
+    height: 90vh;
+    padding-top: 25vh; /* Adjust this value to position the content higher */
 }
 
 
