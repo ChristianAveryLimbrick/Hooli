@@ -3,6 +3,7 @@ import '../App.css'
 import HooliLogo from "../Hooli.png";
 import "flowbite";
 import { useState } from "react";
+import Result from "./Result";
 
 ("use client");
 
@@ -14,7 +15,9 @@ export default function Home() {
         <Logo />
         <Search />
         <Btn />
+
       </div>
+      <Result />
       <div>
         <Footer />
       </div>
